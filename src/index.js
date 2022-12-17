@@ -19,7 +19,7 @@ const lightbox = new SimpleLightbox('.gallery a', {
 let page = 1;
 
 searchForm.addEventListener('submit', onSearch);
-loadMoreBtn.classList.add('is-hidden');
+loadMoreBtn.classList.add('disabled');
 
 function onSearch(event) {
   event.preventDefault();
@@ -36,6 +36,7 @@ function onSearch(event) {
 
 function buildForSearch(images) {
   let totalPage = images.totalHits / 40;
+  loadMoreBtn.classList.remove('disabled')
 
   if (images.totalHits === 0) {
     Notiflix.Notify.failure(
