@@ -21,9 +21,11 @@ let page = 1;
 searchForm.addEventListener('submit', onSearch);
 loadMoreBtn.classList.add('disabled');
 
+
 function onSearch(event) {
   event.preventDefault();
   gallery.innerHTML = '';
+  
   // посилання на інпут
   const inputValue = inputForm.value.trim();
   if (inputValue.length !== 0) {
@@ -36,7 +38,7 @@ function onSearch(event) {
 
 function buildForSearch(images) {
   let totalPage = images.totalHits / 40;
-  loadMoreBtn.classList.remove('disabled')
+  loadMoreBtn.classList.remove('is-hidden')
 
   if (images.totalHits === 0) {
     Notiflix.Notify.failure(
