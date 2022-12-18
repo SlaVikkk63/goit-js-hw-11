@@ -112,9 +112,8 @@ touch-action: manipulation;
 will-change: transform;
 }
 
-.load-more:disabled {
-pointer-events: none;
-}
+// .load-more:disabled {
+// }
 
 .is-hidden {
     display: none;

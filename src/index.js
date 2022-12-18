@@ -19,13 +19,13 @@ const lightbox = new SimpleLightbox('.gallery a', {
 let page = 1;
 
 searchForm.addEventListener('submit', onSearch);
-loadMoreBtn.classList.add('disabled');
+loadMoreBtn.classList.add('is-hidden');
 
 
 function onSearch(event) {
   event.preventDefault();
   gallery.innerHTML = '';
-  
+  loadMoreBtn.classList.add('is-hidden');
   // посилання на інпут
   const inputValue = inputForm.value.trim();
   if (inputValue.length !== 0) {
